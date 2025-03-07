@@ -1,0 +1,210 @@
+/* frontend/src/components/ChatWindow.css */
+.chat-container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: rgb(199, 169, 241);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(36, 29, 29, 0.3);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.chat-window {
+    flex: 1;
+    padding: 25px;
+    height: 500px;
+    overflow-y: auto;
+    background: rgba(16, 27, 43, 0.7); /* Dark gray with 70% opacity */
+}
+
+.message-group {
+    margin-bottom: 25px;
+    opacity: 0.7;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-message {
+    padding: 12px 18px;
+    border-radius: 20px;
+    margin: 5px 0;
+    max-width: 75%;
+    word-wrap: break-word;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: rgba(0, 123, 255, 0.6); /* Darker blue with 60% opacity */
+    color: #73ace6; /* Lighter text for contrast */
+    margin-left: auto;
+    text-align: right;
+    border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+    padding: 12px 18px;
+    border-radius: 20px;
+    margin: 5px 0;
+    max-width: 75%;
+    word-wrap: break-word;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: rgb(176, 203, 231); /* Light gray with 60% opacity */
+    color: #050505; /* Keep text dark for readability */
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 2px 4px rgba(30, 30, 30, 0.1);
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-top: 1px solid #8298e9;
+    background-color: #ae97ee;
+    position: relative;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #e49999;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.chat-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.send-button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
+
+.emoji-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.emoji-picker {
+    position: absolute;
+    bottom: 70px;
+    left: 10px;
+    z-index: 20;
+}
+
+/* Side panel for chat history */
+.chat-history {
+    width: 300px;
+    background-color: #26c0c0;
+    border-right: 1px solid #0e0e0e;
+    overflow-y: auto;
+    padding: 20px;
+    height: 100%;
+}
+
+.history-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.history-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.history-message {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.history-message.user {
+    background-color: #9ad7ba;
+    color: #adf2b1;
+}
+
+.history-message.bot {
+    background-color: #abe7af;
+    color: #b0e6d1;
+}
+
+.no-history {
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.history-item {
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: #111c26;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.history-item:hover {
+    background-color: #a8b44f;
+}
+
+.history-item.active {
+    background-color: #94e227;
+    font-weight: 600;
+}
+
+.new-chat-button {
+    padding: 8px 16px;
+    background-color: #0e1216;
+    color: rgb(244, 164, 164);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+.new-chat-button:hover {
+    background-color: #43ec5f;
+}
+
+/* Main chat area */
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
